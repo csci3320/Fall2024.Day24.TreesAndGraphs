@@ -2,17 +2,17 @@ class Node:
     def __init__(self, value):
         self.value = value
         self.edges = []
+
     def addEdge(self, edge):
         self.edges.append(edge)
-    def __repr__(self):
-        # edges = ",".join(self.edges)
+
+    def __str__(self):
+        # edges = ",".join([str(x) for x in self.edges])
         return f"{self.value}"
 
 class Edge:
     def __init__(self, node):
         self.node = node
-    def __repr__(self):
-        return str(self.node)
     def __str__(self):
         return str(self.node)
 
@@ -35,14 +35,18 @@ Nepal.edges.append(Edge(LasVegas))
 KansasCity.addEdge(Edge(LittleRock))
 
 print(Omaha)
+print()
+print("From Omaha I can go to: ")
 
 for edge in Omaha.edges:
     print(edge)
 
 print()
+print("From Nepal I can go to:")
 for edge in Nepal.edges:
     print(edge)
 
 print()
+print("FRom Kansas City I can go to:")
 for edge in KansasCity.edges:
     print(edge)
